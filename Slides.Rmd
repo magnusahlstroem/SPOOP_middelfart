@@ -1,0 +1,147 @@
+---
+title: "Udfordringer med databehandling"
+header-includes:
+- \usepackage{booktabs}
+author: "MGA"
+date: "1 nov 2018"
+output:
+  beamer_presentation: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = F, message = F, warning=F)
+```
+
+##Formål med SPOOP
+
+SPOOP leverer data om lægers og tandlægers ordinationer af afhængighedsskabende og antipsykotiske lægemidler. Disse data bruges til:
+
+I: Screening af lægers og tandlægers ordinationspraksis.
+
+II: Understøttelse af styrelsens tilsyn.
+
+##Databehandling ifm. SPOOP
+
+###Problem -> Spørgsmål -> Analyse -> Svar -> Løsning?
+
+##Fra problem til løsning 
+
+\textbf{Problem}:
+
+- Stort overforbrug af afhængighedsskabende lægemidler i Danmark
+
+```{r, fig.align = 'center', fig.height=1, fig.width=1}
+require(jpeg); require(readr); require(png); require(grid)
+pic <- readJPEG("F:/EfUA/MGAH/Oplaeg/SPOOP_mode_middelfart/iceberg-in-the-ocean.jpg")
+grid.raster(pic)
+```
+
+##Fra problem til løsning 
+
+\textbf{Den største udfordring er at stille de rigtige spørgsmål}
+
+\textbf{Spørgsmål}: 
+
+- Hvem udskriver \underline{mest medicin}?
+- Hvem udskriver \underline{for meget medicin}?
+- Hvem udskriver \underline{forkert medicin}?
+- Hvem skal vi lave en tilsynssag på?
+- Hvem skal have indskrænket/frataget deres autorisation?
+\newline
+- Kan vi ændre på en læges/lægers udskrivningsmønster med vores handlinger?
+- Kan vi reducere uhensigtsmæssig brug af afhængighedsskabende lægemidler i Danmark?
+
+##Fra problem til løsning 
+
+\textbf{Analyse}:
+
+- 'Håndholdt' del
+
+```{r, fig.align='center', fig.height=2, fig.width=2}
+require(jpeg); require(readr); require(png); require(grid)
+source("F:/EfUA/MGAH/SPOOP/Functions/lcpr.R")
+pic <- readJPEG("F:/EfUA/MGAH/Oplaeg/SPOOP_mode_middelfart/calculator.jpg")
+grid.raster(pic)
+```
+
+Hvornår har hun fødselsdag - 180468-7324?
+
+##Fra problem til løsning 
+
+\textbf{Analyse}:
+
+- 'Elektronisk' del
+
+```{r, fig.align = 'center', fig.height=2, fig.width=3.7}
+require(jpeg); require(readr); require(png); require(grid)
+pic <- readJPEG("F:/EfUA/MGAH/Oplaeg/SPOOP_mode_middelfart/cpr_function.jpg")
+grid.raster(pic)
+```
+
+Hvornår har hun fødselsdag - 180468-7324?
+
+##Fra problem til løsning 
+
+Hvornår har hun fødselsdag - 180468-7324?
+
+- Det er ikke et rigtigt cpr-nummer
+- 18. april 1868
+- 18. april 1968
+
+##Fra problem til løsning 
+
+Hvornår har hun fødselsdag - 180468-7324?
+
+- Det er ikke et rigtigt cpr-nummer
+- 18. april 1868
+- 18. april 1968
+
+```{r, echo=T}
+cpr2BD("1804687324")
+```
+
+
+##Fra problem til løsning 
+
+\textbf{Svar}:
+
+Faktorer som øger sandsynligheden for at kunne give et godt svar ved primært elektronisk analyse
+
+- Veldefineret spørgsmål
+- Gode data
+
+##Fra problem til løsning 
+
+\textbf{Løsning}:
+
+- Vi kan identificere de individer som har et uhensigtsmæssigt udskrivnings
+- Vores handlinger gør at de får et mere hensigtsmæssigt udskrivningsmønster
+- Vi sænker forbruger af uhensigtsmæssig ordineret afhængighedsskabende medicin
+
+##Hvem gør hvad?
+
+- \textbf{Computeren}
+    - Hurtig
+    - Præcis
+    - Snotdum
+
+- \textbf{Mennesket}
+    - Langsom
+    - Upræcis
+    - Reflekteret og virkelig klogt
+
+##Isbjerget
+
+```{r, fig.align = 'center', fig.height=2, fig.width=2}
+pic <- readJPEG("F:/EfUA/MGAH/Oplaeg/SPOOP_mode_middelfart/iceberg-in-the-ocean.jpg")
+grid.raster(pic)
+```
+
+##Udfordringer
+
+- Stille de rigtige spørgsmål
+- Afpasse værktøjet til opgaven
+
+----
+
+\LARGE{TAK FOR OPMÆRKSOMHEDEN!}
